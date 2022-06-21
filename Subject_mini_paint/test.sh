@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "> start"
 echo "$ compile"
-rm -f _mini_paint* _our_mini_paint* _gen*
+rm -f _mini_paint* _gen*
 gcc -Wall -Wextra -Werror mini_paint.c -lm  -o _mini_paint
 g++ -Wall -Wextra -Werror generate_example.cpp -lm -o _gen
 echo "$ test"
@@ -44,5 +44,5 @@ do
 	# max=$((max + 1))
 	counter=$((counter + 1))
 done
-rm -f _mini_paint* _our_mini_paint* _gen* example_* output coutput
+rm -f _mini_paint* _gen* example_* output coutput
 printf "\n> done"

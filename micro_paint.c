@@ -48,11 +48,11 @@ char	*get_zone(FILE *file, t_zone *zone)
 
 int		in_rectangle(float x, float y, t_shape *shape)
 {
-	if (((x < shape->x || (shape->x + shape->width < x))
-	|| (y < shape->y)) || (shape->y + shape->height < y))
+	if (x < shape->x || shape->x + shape->width < x
+	|| y < shape->y || shape->y + shape->height < y)
 		return (0);
-	if (((x - shape->x < 1.00000000) || ((shape->x + shape->width) - x < 1.00000000)) ||
-		((y - shape->y < 1.00000000 || ((shape->y + shape->height) - y < 1.00000000))))
+	if ((x - shape->x) < 1 || (shape->x + shape->width) - x < 1 ||
+		(y - shape->y) < 1 || (shape->y + shape->height) - y < 1)
 		return (2);
 	return (1);
 }
